@@ -99,7 +99,9 @@
       <label form="short" prefix=", " text-case="capitalize-first"/>
     </names>
   </macro>
-  <macro name="locators"/>
+  <macro name="locators">
+    <text macro="page"/>
+  </macro>
   <macro name="title">
     <choose>
       <if type="bill book graphic legal_case legislation motion_picture song" match="any">
@@ -177,7 +179,9 @@
       </if>
     </choose>
   </macro>
-  <macro name="page"/>
+  <macro name="page">
+    <text variable="page"/>
+  </macro>
   <macro name="citation-locator">
     <group delimiter=" ">
       <choose>
