@@ -2,7 +2,7 @@
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only">
   <!-- This style was edited with the Visual CSL Editor (http://editor.citationstyles.org/visualEditor/) -->
   <info>
-    <title>IEEE_UESTC</title>
+    <title>IEEE_uestc</title>
     <id>http://www.zotero.org/styles/ieee_uestc</id>
     <link href="http://www.zotero.org/styles/ieee_uestc" rel="self"/>
     <link href="http://www.ieee.org/documents/style_manual.pdf" rel="documentation"/>
@@ -38,7 +38,7 @@
     <category citation-format="numeric"/>
     <category field="engineering"/>
     <category field="generic-base"/>
-    <updated>2016-04-14T16:15:24+00:00</updated>
+    <updated>2025-03-06T20:08:52+00:00</updated>
     <summary>This citation style does its best to imitate the UESTC specifications for the thesis citation style. It is in no way a complete port of the official latex style.</summary>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
@@ -200,34 +200,6 @@
       <text variable="locator"/>
     </group>
   </macro>
-  <macro name="type">
-    <choose>
-      <if type="article-journal">
-        <text value="J"/>
-      </if>
-      <else-if type="paper-conference">
-        <text value="C"/>
-      </else-if>
-      <else-if type="book">
-        <text value="M"/>
-      </else-if>
-      <else-if type="thesis">
-        <text value="D"/>
-      </else-if>
-      <else-if type="webpage post-weblog">
-        <text value="OL"/>
-      </else-if>
-      <else-if type="patent">
-        <text value="P"/>
-      </else-if>
-      <else-if type="legal_case legislation bill treaty">
-        <text value="S"/>
-      </else-if>
-      <else>
-        <text value="X"/>
-      </else>
-    </choose>
-  </macro>
   <citation collapse="citation-number">
     <sort>
       <key variable="citation-number"/>
@@ -242,18 +214,241 @@
   <bibliography entry-spacing="0" second-field-align="flush">
     <layout suffix=".">
       <text variable="citation-number" prefix="[" suffix="]"/>
-      <group delimiter=". ">
-        <text macro="author"/>
-        <text macro="title"/>
-        <group delimiter=" ">
-          <text macro="type"/>
-          <text macro="container-title"/>
-          <text macro="issued"/>
-          <group delimiter="(">
-            <text macro="volume"/>
-            <text macro="issue"/>
+      <group delimiter=".">
+        <group delimiter=". ">
+          <text macro="author"/>
+          <group>
+            <choose>
+              <if type="article-journal">
+                <group delimiter=" ">
+                  <text macro="title"/>
+                  <text value="J" text-case="uppercase" prefix="[" suffix="]"/>
+                </group>
+              </if>
+              <else-if type="paper-conference speech" match="any">
+                <group delimiter=" ">
+                  <text macro="title"/>
+                  <text value="C" text-case="uppercase" prefix="[" suffix="]"/>
+                </group>
+              </else-if>
+              <else-if type="report">
+                <text macro="title"/>
+                <text value="R" text-case="uppercase" prefix="[" suffix="]"/>
+              </else-if>
+              <else-if type="thesis">
+                <text macro="title"/>
+                <text value="D" text-case="uppercase" prefix="[" suffix="]"/>
+              </else-if>
+              <else-if type="webpage post-weblog" match="any">
+                <text macro="title"/>
+                <text value="OL" text-case="uppercase" prefix="[" suffix="]"/>
+              </else-if>
+              <else-if type="patent">
+                <text macro="title"/>
+                <text value="P" text-case="uppercase" prefix="[" suffix="]"/>
+              </else-if>
+              <else-if type="legal_case legislation bill treaty" match="any">
+                <text macro="title"/>
+                <text value="S" text-case="uppercase" prefix="[" suffix="]"/>
+              </else-if>
+              <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
+                <text macro="title"/>
+                <text value="M" text-case="uppercase" prefix="[" suffix="]"/>
+              </else-if>
+              <else-if type="chapter paper-conference" match="any">
+                <text macro="title"/>
+                <text value="G" text-case="uppercase" prefix="[" suffix="]"/>
+              </else-if>
+              <else-if type="dataset">
+                <text macro="title"/>
+                <text value="DB" text-case="uppercase" prefix="[" suffix="]"/>
+              </else-if>
+              <else-if type="article-newspaper">
+                <text macro="title"/>
+                <text value="N" text-case="uppercase" prefix="[" suffix="]"/>
+              </else-if>
+              <else>
+                <group delimiter=" ">
+                  <text macro="title"/>
+                  <text value="X" text-case="uppercase" prefix="[" suffix="]"/>
+                </group>
+              </else>
+            </choose>
           </group>
-          <text macro="page"/>
+        </group>
+        <group>
+          <choose>
+            <if type="article-journal">
+              <group delimiter=", ">
+                <text variable="container-title"/>
+                <group>
+                  <text macro="issued"/>
+                </group>
+                <group delimiter=":">
+                  <group>
+                    <number variable="volume" form="numeric"/>
+                    <number prefix="(" suffix=")" variable="issue"/>
+                  </group>
+                  <text variable="page"/>
+                </group>
+              </group>
+              <text macro="page"/>
+            </if>
+            <else-if type="paper-conference speech" match="any">
+              <group delimiter=", ">
+                <text variable="container-title"/>
+                <group>
+                  <text macro="issued"/>
+                </group>
+                <group delimiter=":">
+                  <group>
+                    <number variable="volume" form="numeric"/>
+                    <number prefix="(" suffix=")" variable="issue"/>
+                  </group>
+                  <text variable="event-place"/>
+                  <text variable="page"/>
+                </group>
+              </group>
+              <text macro="page"/>
+            </else-if>
+            <else-if type="report">
+              <group delimiter=", ">
+                <text variable="container-title"/>
+                <group>
+                  <text macro="issued"/>
+                </group>
+              </group>
+              <text macro="page"/>
+            </else-if>
+            <else-if type="thesis">
+              <group delimiter=", ">
+                <text variable="container-title"/>
+                <group>
+                  <text macro="issued"/>
+                </group>
+                <group delimiter=":">
+                  <group>
+                    <number variable="volume" form="numeric"/>
+                    <number prefix="(" suffix=")" variable="issue"/>
+                  </group>
+                  <text variable="page"/>
+                </group>
+              </group>
+              <text macro="page"/>
+            </else-if>
+            <else-if type="webpage post-weblog" match="any">
+              <group delimiter=", ">
+                <text variable="container-title"/>
+                <group>
+                  <text macro="issued"/>
+                </group>
+                <group delimiter=":">
+                  <group>
+                    <number variable="volume" form="numeric"/>
+                    <number prefix="(" suffix=")" variable="issue"/>
+                  </group>
+                  <text variable="page"/>
+                </group>
+              </group>
+              <text macro="page"/>
+            </else-if>
+            <else-if type="patent">
+              <group delimiter=", ">
+                <text variable="container-title"/>
+                <group>
+                  <text macro="issued"/>
+                </group>
+                <group delimiter=":">
+                  <group>
+                    <number variable="volume" form="numeric"/>
+                    <number prefix="(" suffix=")" variable="issue"/>
+                  </group>
+                  <text variable="page"/>
+                </group>
+              </group>
+              <text macro="page"/>
+            </else-if>
+            <else-if type="book">
+              <group delimiter=", ">
+                <text variable="container-title"/>
+                <group>
+                  <text macro="issued"/>
+                </group>
+                <group delimiter=":">
+                  <group>
+                    <number variable="volume" form="numeric"/>
+                    <number prefix="(" suffix=")" variable="issue"/>
+                  </group>
+                  <text variable="page"/>
+                </group>
+              </group>
+              <text macro="page"/>
+            </else-if>
+            <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
+              <group delimiter=", ">
+                <text variable="container-title"/>
+                <group>
+                  <text macro="issued"/>
+                </group>
+                <group delimiter=":">
+                  <group>
+                    <number variable="volume" form="numeric"/>
+                    <number prefix="(" suffix=")" variable="issue"/>
+                  </group>
+                  <text variable="page"/>
+                </group>
+              </group>
+              <text macro="page"/>
+            </else-if>
+            <else-if type="article-magazine article-newspaper broadcast interview manuscript map patent personal_communication song speech thesis webpage" match="any">
+              <group delimiter=", ">
+                <text variable="container-title"/>
+                <group>
+                  <text macro="issued"/>
+                </group>
+                <group delimiter=":">
+                  <group>
+                    <number variable="volume" form="numeric"/>
+                    <number prefix="(" suffix=")" variable="issue"/>
+                  </group>
+                  <text variable="page"/>
+                </group>
+              </group>
+              <text macro="page"/>
+            </else-if>
+            <else-if type="chapter paper-conference" match="any">
+              <group delimiter=", ">
+                <text variable="container-title"/>
+                <group>
+                  <text macro="issued"/>
+                </group>
+                <group delimiter=":">
+                  <group>
+                    <number variable="volume" form="numeric"/>
+                    <number prefix="(" suffix=")" variable="issue"/>
+                  </group>
+                  <text variable="page"/>
+                </group>
+              </group>
+              <text macro="page"/>
+            </else-if>
+            <else>
+              <group delimiter=", ">
+                <text variable="container-title"/>
+                <group>
+                  <text macro="issued"/>
+                </group>
+                <group delimiter=":">
+                  <group>
+                    <number variable="volume" form="numeric"/>
+                    <number prefix="(" suffix=")" variable="issue"/>
+                  </group>
+                  <text variable="page"/>
+                </group>
+              </group>
+              <text macro="page"/>
+            </else>
+          </choose>
         </group>
       </group>
     </layout>
