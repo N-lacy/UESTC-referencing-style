@@ -1,11 +1,12 @@
 # uestc-referencing-style
 A referencing style for uestc thesis
+
 **NB: This tutorial assumes that you have downloaded, installed, and set up Mendeley Reference Manager on your PC.**
 
-Copy the link for IEEE_UESTC.csl and paste it in your Mendeley Cite word add-on.
+Copy the link for **IEEE_UESTC.csl** and paste it in your **Mendeley Cite** word add-on.
 
 ## Step 1: Get the reference style link  
-Open IEEE_UESTC.csl on github and click the raw tab to view the raw code
+Open **IEEE_UESTC.csl** on github and click the **raw** tab to view the raw code
 
 ![image](https://github.com/user-attachments/assets/13956512-8392-41fc-9276-1d5febb9525a)
 
@@ -29,7 +30,7 @@ Paste the link you copied into the box and hit **Enter** or click **Update Citat
 
 ![image](https://github.com/user-attachments/assets/42a4d6fc-72af-461d-b433-de95ec55a4b3)
 
-You should see IEEE_uestc appear on your style list
+You should see **IEEE_uestc** appear on your style list
 Select it, and your're good to go
 
 ![image](https://github.com/user-attachments/assets/d4f580b2-10a4-4a53-a975-5d0836ac88a7)
@@ -40,6 +41,7 @@ This is not a tutorial on how to use Mendeley Cite, you can find such a tutorial
 Disclaimer: This citation style is not an official style from UESTC. This is an update on a work done by a former international student of UESTC. It is done to follow the UESTC citation rules to the best of our abilities.
 Here's a simple sample guide for the UESTC Citation style
 
+.
 
 [13] First letter of First name. full spelling of family name, second authors, third authors. title [type of reference]. Name of journal, year, volume (No.): pages-pages  
 
@@ -61,6 +63,6 @@ Patent: [1] authors. Title[P]. nation of patent, type of patent, No. of patent, 
 
 Standard: [1] Standard issuing institution. code of standard. Title[S]. press place: press, date
 
-
+.
 
 Sometimes, all the details of a reference won't be automantically added to Mendeley, go through your bibliography and modify accordingly.
