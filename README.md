@@ -15,9 +15,11 @@ Actually, here's the link: https://github.com/N-lacy/UESTC-referencing-style/blo
 
 ## Step 2: Add the referencing style to your Mendeley Reference Manager via the Mendeley Cite Word Add-on
 Open MS Word and go **Mendeley Cite** under the **References** tab
+
 ![image](https://github.com/user-attachments/assets/6c50dcdf-13c5-4cbd-b49d-b737797d3a69)
 
 Click on **Citation Settings** then click on **Change Citation Style**
+
 ![image](https://github.com/user-attachments/assets/6b201240-fe18-4565-8967-736a1d5fb62e)
 
 Go all the way down to **Add a Custom Style**
@@ -35,14 +37,23 @@ Disclaimer: This citation style is not an official style from UESTC. This is an 
 Here's a simple sample guide for the UESTC Citation style
 
 [13] First letter of First name. full spelling of family name, second authors, third authors. title [type of reference]. Name of journal, year, volume (No.): pages-pages  
+
   Type of reference:   journal ---[J]; conference paper—[C]; book –[M]; thesis—[D]; Newspaper articles—[N]; report—[R], patent—[P], standard—[S]
+  
 Journal:   [1] authors. Title[J]. name of journal, year, volume(No.):pages-pages
+
 Conference paper: [1] authors. Title[C]. proceeding of conference, space of conference, date of conference, pages-pages
+
 Book : [1] authors. Title[M]. place of publication: press, year of publication, :pages-pages
+
 Thesis: [1] authors. Title[D]. place of university: university, year, pages-pages
+
 Newspaper: [1] authors. Title[N]. name of newspaper, date of publication
+
 Report: [1] authors. Title[R]. place of report: report organizer, date
+
 Patent: [1] authors. Title[P]. nation of patent, type of patent, No. of patent, date
+
 Standard: [1] Standard issuing institution. code of standard. Title[S]. press place: press, date
 
 Sometimes, all the details of a reference won't be automantically added to Mendeley, go through your bibliography and modify accordingly.
