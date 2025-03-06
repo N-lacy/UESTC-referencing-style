@@ -37,6 +37,7 @@ Select it, and your're good to go
 ![image](https://github.com/user-attachments/assets/d4f580b2-10a4-4a53-a975-5d0836ac88a7)
 
 
+## Notes
 This is not a tutorial on how to use Mendeley Cite, you can find such a tutorial here: https://youtu.be/kTUGWGECZgM?si=fiydJgF2_w5YLODt
 
 Disclaimer: This citation style is not an official style from UESTC. This is an update on a work done by a former international student of UESTC. It is done to follow the UESTC citation rules to the best of our abilities.
@@ -67,3 +68,5 @@ Standard: [1] Standard issuing institution. code of standard. Title[S]. press pl
 .
 
 Sometimes, all the details of a reference won't be automantically added to Mendeley, go through your bibliography and modify accordingly.
+
+This file can also be used in other reference manager software. However, I provide no tutorial for those. You can find them online.
