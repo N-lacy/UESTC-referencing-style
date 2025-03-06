@@ -39,6 +39,11 @@ Select it, and your're good to go
 
 ## Notes
 This is not a tutorial on how to use Mendeley Cite, you can find such a tutorial here: https://youtu.be/kTUGWGECZgM?si=fiydJgF2_w5YLODt
+Other resources:
+
+https://github.com/happymondaynkanta/UESTC-Doctoral-Thesis-Overleaf-Latex-Version-for-International-Students
+
+https://github.com/tinoryj/UESTC-Thesis-Latex-Template/blob/main/README_Eng.md
 
 Disclaimer: This citation style is not an official style from UESTC. This is an update on a work done by a former international student of UESTC. It is done to follow the UESTC citation rules to the best of our abilities.
 Here's a simple sample guide for the UESTC Citation style
