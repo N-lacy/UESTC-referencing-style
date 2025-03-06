@@ -6,7 +6,8 @@ A referencing style for uestc thesis
 Copy the link for **IEEE_UESTC.csl** and paste it in your **Mendeley Cite** word add-on.
 
 ## Step 1: Get the reference style link  
-Open **IEEE_UESTC.csl** on github and click the **raw** tab to view the raw code
+Open **IEEE_UESTC.csl** on github and click the **raw** tab to view the raw code. 
+**IEEE_UESTC_mod.csl** is a modified version that tries to handle cases where the type isn't specified and marks them in your bibliography with **[X]**. You can use this instead, and look for any such marks in your bibliography and correct them accordingly.
 
 ![image](https://github.com/user-attachments/assets/13956512-8392-41fc-9276-1d5febb9525a)
 
