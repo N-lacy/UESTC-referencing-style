@@ -2,9 +2,8 @@
 A referencing style for uestc thesis
 
 **NB: This tutorial assumes that you have downloaded, installed, and set up Mendeley Reference Manager on your PC.**
-If you are not familiar with Mendeley Reference manager, this video tutorial will tell you all you need to know about it. Link: https://youtu.be/kTUGWGECZgM?si=fiydJgF2_w5YLODt
 
-Copy the link for **IEEE_UESTC.csl** and paste it in your **Mendeley Cite** word add-on.
+If you are not familiar with Mendeley Reference manager, this video tutorial will tell you all you need to know about it. Link: https://youtu.be/kTUGWGECZgM?si=fiydJgF2_w5YLODt
 
 ## About this project
 Like other top universities of it's class, UESTC has it's own rules and/or guidlines on how to properly reference other works in your thesis.
@@ -19,8 +18,11 @@ Basically, the main difference between the two is that **IEEE_UESTC_mod.csl** ha
 
 Both links are available below. Copy the link of whichever you choose. 
 
-**IEEE_UESTC_mod.csl** (Recommended): https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC_mod.csl
-**IEEE_UESTC.csl**https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC.csl
+**IEEE_UESTC_mod.csl** (Recommended):
+```https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC_mod.csl```
+
+**IEEE_UESTC.csl**:
+```https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC.csl```
 
 The included word document shows the results of using **IEEE_UESTC_mod.csl**.
 
@@ -55,7 +57,8 @@ https://github.com/happymondaynkanta/UESTC-Doctoral-Thesis-Overleaf-Latex-Versio
 
 https://github.com/tinoryj/UESTC-Thesis-Latex-Template/blob/main/README_Eng.md
 
-Disclaimer: This project is not an official work from UESTC. This is a work done by myself and a former international student of UESTC. It is done to follow the UESTC citation rules to the best of our abilities.
+> [!IMPORTANT]  
+> This project is not an official work from UESTC. This is a work done by myself and a former international student of UESTC. It is done to follow the UESTC citation rules to the best of our abilities.
 Here's a simple sample guide for the UESTC Citation style.
 
 .
