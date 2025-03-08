@@ -22,22 +22,6 @@ Both links are available below. Copy the link of whichever you choose.
 **IEEE_UESTC_mod.csl** (Recommended):
 https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC_mod.csl
 
-<div>
-  <textarea id="myInput" rows="4" cols="50">
-  https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC_mod.csl
-  </textarea>
-  <button onclick="copyText()">Copy text</button>
-</div>
-
-<script>
-  function copyText() {
-    var copyText = document.getElementById("myInput");
-    copyText.select();
-    document.execCommand("copy");
-    alert("Copied the text: " + copyText.value);
-  }
-</script>
-
 **IEEE_UESTC.csl**:
 https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC.csl
 
