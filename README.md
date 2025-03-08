@@ -3,12 +3,13 @@ A referencing style for uestc thesis
 
 **NB: This tutorial assumes that you have downloaded, installed, and set up Mendeley Reference Manager on your PC.**
 
-If you are not familiar with Mendeley Reference manager, this video tutorial will tell you all you need to know about it. Link: https://youtu.be/kTUGWGECZgM?si=fiydJgF2_w5YLODt
+If you are not familiar with Mendeley Reference manager, [this](https://youtu.be/kTUGWGECZgM?si=fiydJgF2_w5YLODt
+) video tutorial will tell you all you need to know about it. https://youtu.be/kTUGWGECZgM?si=fiydJgF2_w5YLODt
 
 ## About this project
 Like other top universities of it's class, UESTC has it's own rules and/or guidlines on how to properly reference other works in your thesis.
 
-This project takes those guidelines and codes them into a **.csl** file (Citation Style language) such that you can directly include it into your work without having to format your work manually yourself.
+This project takes those guidelines and codes them into a **.csl** file (Citation Style Language) such that you can directly include it into your work without having to format your work manually yourself.
 
 There are four files in this project. ieee_uestc.csl and ieee_uestc_v2.csl are the original source files made for much older versions of Mendeley and are no longer supported.
 
@@ -19,10 +20,26 @@ Basically, the main difference between the two is that **IEEE_UESTC_mod.csl** ha
 Both links are available below. Copy the link of whichever you choose. 
 
 **IEEE_UESTC_mod.csl** (Recommended):
-```https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC_mod.csl```
+https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC_mod.csl
+
+<div>
+  <textarea id="myInput" rows="4" cols="50">
+  https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC_mod.csl
+  </textarea>
+  <button onclick="copyText()">Copy text</button>
+</div>
+
+<script>
+  function copyText() {
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    document.execCommand("copy");
+    alert("Copied the text: " + copyText.value);
+  }
+</script>
 
 **IEEE_UESTC.csl**:
-```https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC.csl```
+https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC.csl
 
 The included word document shows the results of using **IEEE_UESTC_mod.csl**.
 
