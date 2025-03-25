@@ -214,7 +214,7 @@
   <bibliography entry-spacing="0" second-field-align="flush">
     <layout suffix=".">
       <text variable="citation-number" prefix="[" suffix="]"/>
-      <group delimiter=".">
+      <group delimiter=". ">
         <group delimiter=". ">
           <text macro="author"/>
           <group>
@@ -232,40 +232,58 @@
                 </group>
               </else-if>
               <else-if type="report">
-                <text macro="title"/>
-                <text value="R" text-case="uppercase" prefix="[" suffix="]"/>
+                <group delimiter=" ">
+                  <text macro="title"/>
+                  <text value="R" text-case="uppercase" prefix="[" suffix="]"/>
+                </group>
               </else-if>
               <else-if type="thesis">
-                <text macro="title"/>
-                <text value="D" text-case="uppercase" prefix="[" suffix="]"/>
+                <group delimiter=" ">
+                  <text macro="title"/>
+                  <text value="D" text-case="uppercase" prefix="[" suffix="]"/>
+                </group>
               </else-if>
               <else-if type="webpage post-weblog" match="any">
-                <text macro="title"/>
-                <text value="OL" text-case="uppercase" prefix="[" suffix="]"/>
+                <group delimiter=" ">
+                  <text macro="title"/>
+                  <text value="OL" text-case="uppercase" prefix="[" suffix="]"/>
+                </group>
               </else-if>
               <else-if type="patent">
-                <text macro="title"/>
-                <text value="P" text-case="uppercase" prefix="[" suffix="]"/>
+                <group delimiter=" ">
+                  <text macro="title"/>
+                  <text value="P" text-case="uppercase" prefix="[" suffix="]"/>
+                </group>
               </else-if>
               <else-if type="legal_case legislation bill treaty" match="any">
-                <text macro="title"/>
-                <text value="S" text-case="uppercase" prefix="[" suffix="]"/>
+                <group delimiter=" ">
+                  <text macro="title"/>
+                  <text value="S" text-case="uppercase" prefix="[" suffix="]"/>
+                </group>
               </else-if>
               <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
-                <text macro="title"/>
-                <text value="M" text-case="uppercase" prefix="[" suffix="]"/>
+                <group delimiter=" ">
+                  <text macro="title"/>
+                  <text value="M" text-case="uppercase" prefix="[" suffix="]"/>
+                </group>
               </else-if>
               <else-if type="chapter paper-conference" match="any">
-                <text macro="title"/>
-                <text value="G" text-case="uppercase" prefix="[" suffix="]"/>
+                <group delimiter=" ">
+                  <text macro="title"/>
+                  <text value="G" text-case="uppercase" prefix="[" suffix="]"/>
+                </group>
               </else-if>
               <else-if type="dataset">
-                <text macro="title"/>
-                <text value="DB" text-case="uppercase" prefix="[" suffix="]"/>
+                <group delimiter=" ">
+                  <text macro="title"/>
+                  <text value="DB" text-case="uppercase" prefix="[" suffix="]"/>
+                </group>
               </else-if>
               <else-if type="article-newspaper">
-                <text macro="title"/>
-                <text value="N" text-case="uppercase" prefix="[" suffix="]"/>
+                <group delimiter=" ">
+                  <text macro="title"/>
+                  <text value="N" text-case="uppercase" prefix="[" suffix="]"/>
+                </group>
               </else-if>
               <else>
                 <group delimiter=" ">
@@ -284,7 +302,7 @@
                 <group>
                   <text macro="issued"/>
                 </group>
-                <group delimiter=":">
+                <group delimiter=": ">
                   <group>
                     <number variable="volume" form="numeric"/>
                     <number prefix="(" suffix=")" variable="issue"/>
@@ -300,7 +318,7 @@
                 <group>
                   <text macro="issued"/>
                 </group>
-                <group delimiter=":">
+                <group delimiter=": ">
                   <group>
                     <number variable="volume" form="numeric"/>
                     <number prefix="(" suffix=")" variable="issue"/>
@@ -326,7 +344,7 @@
                 <group>
                   <text macro="issued"/>
                 </group>
-                <group delimiter=":">
+                <group delimiter=": ">
                   <group>
                     <number variable="volume" form="numeric"/>
                     <number prefix="(" suffix=")" variable="issue"/>
@@ -342,7 +360,7 @@
                 <group>
                   <text macro="issued"/>
                 </group>
-                <group delimiter=":">
+                <group delimiter=": ">
                   <group>
                     <number variable="volume" form="numeric"/>
                     <number prefix="(" suffix=")" variable="issue"/>
@@ -358,7 +376,7 @@
                 <group>
                   <text macro="issued"/>
                 </group>
-                <group delimiter=":">
+                <group delimiter=": ">
                   <group>
                     <number variable="volume" form="numeric"/>
                     <number prefix="(" suffix=")" variable="issue"/>
@@ -374,7 +392,7 @@
                 <group>
                   <text macro="issued"/>
                 </group>
-                <group delimiter=":">
+                <group delimiter=": ">
                   <group>
                     <number variable="volume" form="numeric"/>
                     <number prefix="(" suffix=")" variable="issue"/>
@@ -390,7 +408,7 @@
                 <group>
                   <text macro="issued"/>
                 </group>
-                <group delimiter=":">
+                <group delimiter=": ">
                   <group>
                     <number variable="volume" form="numeric"/>
                     <number prefix="(" suffix=")" variable="issue"/>
@@ -406,7 +424,7 @@
                 <group>
                   <text macro="issued"/>
                 </group>
-                <group delimiter=":">
+                <group delimiter=": ">
                   <group>
                     <number variable="volume" form="numeric"/>
                     <number prefix="(" suffix=")" variable="issue"/>
@@ -422,7 +440,7 @@
                 <group>
                   <text macro="issued"/>
                 </group>
-                <group delimiter=":">
+                <group delimiter=": ">
                   <group>
                     <number variable="volume" form="numeric"/>
                     <number prefix="(" suffix=")" variable="issue"/>
@@ -438,7 +456,7 @@
                 <group>
                   <text macro="issued"/>
                 </group>
-                <group delimiter=":">
+                <group delimiter=": ">
                   <group>
                     <number variable="volume" form="numeric"/>
                     <number prefix="(" suffix=")" variable="issue"/>
