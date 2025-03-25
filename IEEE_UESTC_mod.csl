@@ -86,11 +86,10 @@
         </date>
       </else>
     </choose>
-    <!-- <text macro="locators"/> -->
   </macro>
   <macro name="author">
     <names variable="author">
-      <name delimiter="," and="text" et-al-min="3" et-al-use-first="3" et-al-subsequent-min="3" initialize-with=". " sort-separator="."/>
+      <name delimiter=", " and="text" et-al-min="3" et-al-use-first="3" et-al-subsequent-min="3" initialize-with=". " sort-separator="."/>
       <label form="short" prefix=", " text-case="capitalize-first"/>
       <substitute>
         <names variable="editor"/>
