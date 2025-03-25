@@ -86,7 +86,7 @@
         </date>
       </else>
     </choose>
-    <text macro="locators"/>
+    <!-- <text macro="locators"/> -->
   </macro>
   <macro name="author">
     <names variable="author">
@@ -310,7 +310,7 @@
                   <text variable="page"/>
                 </group>
               </group>
-              <text macro="page"/>
+              <!-- <text macro="page"/> -->
             </if>
             <else-if type="paper-conference speech" match="any">
               <group delimiter=", ">
@@ -327,7 +327,7 @@
                   <text variable="page"/>
                 </group>
               </group>
-              <text macro="page"/>
+              <!-- <text macro="page"/> -->
             </else-if>
             <else-if type="report">
               <group delimiter=", ">
@@ -352,7 +352,7 @@
                   <text variable="page"/>
                 </group>
               </group>
-              <text macro="page"/>
+              <!-- <text macro="page"/> -->
             </else-if>
             <else-if type="webpage post-weblog" match="any">
               <group delimiter=", ">
@@ -368,7 +368,7 @@
                   <text variable="page"/>
                 </group>
               </group>
-              <text macro="page"/>
+              <!-- <text macro="page"/> -->
             </else-if>
             <else-if type="patent">
               <group delimiter=", ">
@@ -384,7 +384,7 @@
                   <text variable="page"/>
                 </group>
               </group>
-              <text macro="page"/>
+              <!-- <text macro="page"/> -->
             </else-if>
             <else-if type="book">
               <group delimiter=", ">
@@ -400,7 +400,7 @@
                   <text variable="page"/>
                 </group>
               </group>
-              <text macro="page"/>
+              <!-- <text macro="page"/> -->
             </else-if>
             <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
               <group delimiter=", ">
@@ -416,7 +416,7 @@
                   <text variable="page"/>
                 </group>
               </group>
-              <text macro="page"/>
+              <!-- <text macro="page"/> -->
             </else-if>
             <else-if type="article-magazine article-newspaper broadcast interview manuscript map patent personal_communication song speech thesis webpage" match="any">
               <group delimiter=", ">
@@ -432,7 +432,7 @@
                   <text variable="page"/>
                 </group>
               </group>
-              <text macro="page"/>
+              <!-- <text macro="page"/> -->
             </else-if>
             <else-if type="chapter paper-conference" match="any">
               <group delimiter=", ">
@@ -448,7 +448,7 @@
                   <text variable="page"/>
                 </group>
               </group>
-              <text macro="page"/>
+              <!-- <text macro="page"/> -->
             </else-if>
             <else>
               <group delimiter=", ">
@@ -464,7 +464,7 @@
                   <text variable="page"/>
                 </group>
               </group>
-              <text macro="page"/>
+              <!-- <text macro="page"/> -->
             </else>
           </choose>
         </group>
