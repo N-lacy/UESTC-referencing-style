@@ -1,39 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
   <info>
-    <title>UEST_C GB/T 7714-2015</title>
-    <title-short>UESTC_GB7714</title-short>
+    <title>UESTC GB/T 7714-2015</title>
+    <title-short>UESTC_GBT7714</title-short>
     <id>http://www.zotero.org/styles/uestc-gb-t-7714-2015</id>
     <link href="http://www.zotero.org/styles/uestc-gb-t-7714-2015" rel="self"/>
-    <link href="http://www.zotero.org/styles/gb-t-7714-2015-numeric-bilingual" rel="template"/>
+    <link href="http://www.ieee.org/documents/style_manual.pdf" rel="documentation"/>
+    <link href="http://www.ieee.org/documents/auinfo07.pdf" rel="documentation"/>
     <author>
-      <name>Modified for UESTC Thesis</name>
+      <name>Brighter Agyemang</name>
+      <email>brighteragyemang@gmail.com</email>
     </author>
+    <contributor>
+      <name>Michael Berkowitz</name>
+      <email>mberkowi@gmu.edu</email>
+    </contributor>
+    <contributor>
+      <name>Julian Onions</name>
+      <email>julian.onions@gmail.com</email>
+    </contributor>
+    <contributor>
+      <name>Rintze Zelle</name>
+      <uri>http://twitter.com/rintzezelle</uri>
+    </contributor>
+    <contributor>
+      <name>Stephen Frank</name>
+      <uri>http://www.zotero.org/sfrank</uri>
+    </contributor>
+    <contributor>
+      <name>Sebastian Karcher</name>
+    </contributor>
+    <contributor>
+      <name>Nkengafac Lacy Akawung</name>
+      <uri>https://github.com/N-lacy</uri>
+      <email>nakawung@std.uestc.edu.cn</email>
+    </contributor>
     <category citation-format="numeric"/>
     <category field="engineering"/>
-    <updated>2025-03-17T00:00:00+00:00</updated>
-    <summary>GB/T 7714-2015 style modified for UESTC thesis requirements. Features: [1] non-superscript citations, surname-first authors with space-separated initials, sentence case titles, proper type identifiers.</summary>
+    <category field="generic-base"/>
+    <updated>2025-03-06T20:08:52+00:00</updated>
+    <summary>This citation style does its best to imitate the UESTC specifications for the thesis citation style. It is in no way a complete port of the official latex style.</summary>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
 
   <locale xml:lang="en">
     <terms>
       <term name="et-al">et al</term>
-      <term name="et-al-min">4</term>
-      <term name="et-al-use-first">3</term>
       <term name="edition" form="short">ed</term>
       <term name="accessed">accessed</term>
       <term name="in">in</term>
       <term name="presented at">presented at</term>
       <term name="translator" form="verb-short">trans</term>
+      
+      <term name="chapter" form="short">ch.</term>
+      <term name="presented at">presented at the</term>
+      <term name="available at">available</term>
     </terms>
   </locale>
 
   <locale xml:lang="zh">
     <terms>
       <term name="et-al">等</term>
-      <term name="et-al-min">4</term>
-      <term name="et-al-use-first">3</term>
     </terms>
   </locale>
 
@@ -113,7 +140,7 @@
   <!-- Edition: 2nd ed, 3rd ed, etc. No edition for 1st -->
   <macro name="edition">
     <choose>
-      <if type="book chapter" match="any">
+      <if type="bill book chapter graphic legal_case legislation motion_picture paper-conference report song" match="any">
         <choose>
           <if is-numeric="edition">
             <choose>
@@ -182,7 +209,7 @@
     <layout delimiter=", " prefix="[" suffix="]">
       <group delimiter="-">
         <text variable="citation-number"/>
-        <text variable="citation-number" form="last"/>
+        <text macro="citation-locator"/>
       </group>
     </layout>
   </citation>
