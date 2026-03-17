@@ -11,15 +11,20 @@ Like other top universities of it's class, UESTC has it's own rules and/or guidl
 
 This project takes those guidelines and codes them into a **.csl** file (Citation Style Language) such that you can directly include it into your work without having to format your work manually yourself.
 
-There are four files in this project. ieee_uestc.csl and ieee_uestc_v2.csl are the original source files made for much older versions of Mendeley and are no longer supported.
+There are five main files in this project. ieee_uestc.csl and ieee_uestc_v2.csl are the original source files made for much older versions of Mendeley and are no longer supported.
 
 **IEEE_UESTC.csl** is an up-to-date version of ieee_uestc_v2.csl and would work on most recent referencing software. It will not work properly when the work type is not specified in your reference manager (By 'work type' I mean Journal, Report, Book, Patent, etc). While **IEEE_UESTC_mod.csl** is a modified version that tries to handle cases where the type of the cited work isn't specified. 
 
 Basically, the main difference between the two is that **IEEE_UESTC_mod.csl** has code for 'error handling' and would mark any unspecified work type in your bibliography with **[X]**. This is the recommended version, use it and look for any such marks in your bibliography and correct them on your Referencing software.
 
+The most recent update, **UESTC_GBT7714-.csl** is updated with more rules and edge cases. Fixed previous bugs, and improved formatting for Web Pages.
+
 Both links are available below. Copy the link of whichever you choose. 
 
-**IEEE_UESTC_mod.csl** (Recommended):
+**UESTC_GBT7714-.csl** (Recommended):
+https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/UESTC_GBT7714-.csl
+
+**IEEE_UESTC_mod.csl**:
 https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC_mod.csl
 
 **IEEE_UESTC.csl**:
@@ -59,7 +64,8 @@ https://github.com/happymondaynkanta/UESTC-Doctoral-Thesis-Overleaf-Latex-Versio
 https://github.com/tinoryj/UESTC-Thesis-Latex-Template/blob/main/README_Eng.md
 
 > [!IMPORTANT]  
-> This project is not an official work from UESTC. This is a work done by myself and a former international student of UESTC. It is done to follow the UESTC citation rules to the best of our abilities.
+> This project is not an official work from UESTC. This is a work done by myself and a former international student of UESTC. It is done to follow the UESTC citation rules to the best of our abilities. I only intend for this to help as a template. After generating the bibliography, be sure to go through every entry and modify accordingly. 
+> You can report any issues and please check for updates before using the script.
 Here's a simple sample guide for the UESTC Citation style.
 
 .
