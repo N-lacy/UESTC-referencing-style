@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
+  <info>
+    <title>IEEE_UESTC_modified3</title>
+    <id>http://www.zotero.org/styles/ieee_uestc_modified2</id>
+    <link href="http://www.zotero.org/styles/ieee_uestc_modified2" rel="self"/>
+    <author>
+      <name>Brighter Agyemang</name>
+      <email>brighteragyemang@gmail.com</email>
+    </author>
+    <contributor>
+      <name>Nkengafac Lacy Akawung</name>
+      <email>nakawung@std.uestc.edu.cn</email>
+    </contributor>
+    <category citation-format="numeric"/>
+    <category field="engineering"/>
+    <updated>2025-03-17T00:00:00+00:00</updated>
+    <summary>Modified UESTC thesis citation style matching university GB/T 7714-2015 variant rules. Author: Surname Initials (no dots), max 3 authors then et al, correct type codes, date YYYY-MM-DD.</summary>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+
+  <!-- ==================== LOCALES ==================== -->
+  <locale xml:lang="en">
+    <terms>
+      <term name="et-al">et al</term>
+      <term name="edition" form="short">ed</term>
+      <term name="translator" form="short">trans</term>
+    </terms>
+  </locale>
+  <locale xml:lang="zh">
+    <terms>
+      <term name="et-al">等</term>
+      <term name="edition" form="short">版</term>
+      <term name="translator" form="short">译</term>
+    </terms>
+  </locale>
+
+  <!-- ==================== MACROS ==================== -->
+
+  <!-- AUTHORS: Surname InitialInitial, max 3 then et al, no dots on initials -->
+  <macro name="author">
+    <names variable="author">
+      <name
+        name-as-sort-order="all"
+        sort-separator=" "
+        initialize-with=""
+        delimiter=", "
+        et-al-min="4"
+        et-al-use-first="3"
+        delimiter-precedes-last="always"
+        delimiter-precedes-et-al="always"/>
+      <et-al term="et-al" font-style="normal"/>
+      <substitute>
+        <names variable="editor"/>
+        <names variable="translator"/>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <!-- TRANSLATORS for books -->
+  <macro name="translator">
+    <names variable="translator">
+      <name
+        name-as-sort-order="all"
+        sort-separator=" "
+        initialize-with=""
+        delimiter=", "
+        et-al-min="4"
+        et-al-use-first="3"
+        delimiter-precedes-last="always"
+        delimiter-precedes-et-al="always"/>
+      <et-al term="et-al" font-style="normal"/>
+      <label form="short" prefix="译" suffix=""/>
+    </names>
+  </macro>
+
+  <!-- EDITION: only show if not 1st; English = "3rd ed.", Chinese = "2版" -->
+  <macro name="edition">
+    <choose>
+      <if is-numeric="edition">
+        <choose>
+          <!-- suppress edition number 1 -->
+          <if variable="edition">
+            <number variable="edition" form="ordinal"/>
+            <text term="edition" form="short" prefix=" "/>
+          </if>
+        </choose>
+      </if>
+      <else-if variable="edition">
+        <text variable="edition"/>
+      </else-if>
+    </choose>
+  </macro>
+
+  <!-- YEAR only -->
+  <macro name="year-issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <!-- FULL DATE: YYYY-MM-DD -->
+  <macro name="full-date">
+    <date variable="issued">
+      <date-part name="year" suffix="-"/>
+      <date-part name="month" form="numeric-leading-zeros" suffix="-"/>
+      <date-part name="day" form="numeric-leading-zeros"/>
+    </date>
+  </macro>
+
+  <!-- ACCESSED DATE: YYYY-MM-DD -->
+  <macro name="accessed-date">
+    <date variable="accessed">
+      <date-part name="year" suffix="-"/>
+      <date-part name="month" form="numeric-leading-zeros" suffix="-"/>
+      <date-part name="day" form="numeric-leading-zeros"/>
+    </date>
+  </macro>
+
+  <!-- PUBLISHER block: Place: Publisher -->
+  <macro name="publisher">
+    <group delimiter=": ">
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+    </group>
+  </macro>
+
+  <!-- PAGES -->
+  <macro name="page">
+    <text variable="page"/>
+  </macro>
+
+  <!-- CITATION LOCATOR for in-text -->
+  <macro name="citation-locator">
+    <group>
+      <text variable="locator"/>
+    </group>
+  </macro>
+
+  <!-- ==================== CITATION ==================== -->
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout vertical-align="sup" prefix="[" suffix="]">
+      <text variable="citation-number"/>
+      <text macro="citation-locator"/>
+    </layout>
+  </citation>
+
+  <!-- ==================== BIBLIOGRAPHY ==================== -->
+  <bibliography entry-spacing="0" second-field-align="flush" hanging-indent="false">
+    <layout suffix=".">
+      <!-- [No.] -->
+      <text variable="citation-number" prefix="[" suffix="]"/>
+
+      <choose>
+
+        <!-- ====== JOURNAL ARTICLE [J] ====== -->
+        <!-- Format: Author. Title[J]. JournalTitle, Year, Volume(Issue): Pages. -->
+        <if type="article-journal">
+          <group delimiter=". ">
+            <text macro="author"/>
+            <group>
+              <text variable="title"/>
+              <text value="J" prefix="[" suffix="]"/>
+            </group>
+            <group>
+              <text variable="container-title" suffix=", "/>
+              <text macro="year-issued" suffix=", "/>
+              <group>
+                <number variable="volume" form="numeric"/>
+                <number variable="issue" prefix="(" suffix=")"/>
+              </group>
+              <text macro="page" prefix=": "/>
+            </group>
+          </group>
+        </if>
+
+        <!-- ====== CONFERENCE PAPER [C] ====== -->
+        <!-- Format: Author. Title[C]. ConferenceName, Place, Year: Pages. -->
+        <else-if type="paper-conference">
+          <group delimiter=". ">
+            <text macro="author"/>
+            <group>
+              <text variable="title"/>
+              <text value="C" prefix="[" suffix="]"/>
+            </group>
+            <group>
+              <text variable="container-title" suffix=", "/>
+              <text variable="event-place" suffix=", "/>
+              <text macro="year-issued"/>
+              <text macro="page" prefix=": "/>
+            </group>
+          </group>
+        </else-if>
+
+        <!-- ====== THESIS / DISSERTATION [D] ====== -->
+        <!-- Format: Author. Title[D]. Place: University, Year: Pages. -->
+        <else-if type="thesis">
+          <group delimiter=". ">
+            <text macro="author"/>
+            <group>
+              <text variable="title"/>
+              <text value="D" prefix="[" suffix="]"/>
+            </group>
+            <group>
+              <text macro="publisher" suffix=", "/>
+              <text macro="year-issued"/>
+              <text macro="page" prefix=": "/>
+            </group>
+          </group>
+        </else-if>
+
+        <!-- ====== NEWSPAPER [N] ====== -->
+        <!-- Format: Author. Title[N]. Newspaper, YYYY-MM-DD (Edition). -->
+        <else-if type="article-newspaper">
+          <group delimiter=". ">
+            <text macro="author"/>
+            <group>
+              <text variable="title"/>
+              <text value="N" prefix="[" suffix="]"/>
+            </group>
+            <group delimiter=", ">
+              <text variable="container-title"/>
+              <group>
+                <text macro="full-date"/>
+                <text variable="page" prefix=" (" suffix=")"/>
+              </group>
+            </group>
+          </group>
+        </else-if>
+
+        <!-- ====== REPORT [R] ====== -->
+        <!-- Format: Author. Title[R]. Place: Publisher, Year. -->
+        <else-if type="report">
+          <group delimiter=". ">
+            <text macro="author"/>
+            <group>
+              <text variable="title"/>
+              <text value="R" prefix="[" suffix="]"/>
+            </group>
+            <group>
+              <text macro="publisher" suffix=", "/>
+              <text macro="year-issued"/>
+            </group>
+          </group>
+        </else-if>
+
+        <!-- ====== PATENT [P] ====== -->
+        <!-- Format: Inventor. PatentTitle: PatentNumber[P]. YYYY-MM-DD. -->
+        <else-if type="patent">
+          <group delimiter=". ">
+            <text macro="author"/>
+            <group delimiter=": ">
+              <text variable="title"/>
+              <group>
+                <text variable="number"/>
+                <text value="P" prefix="[" suffix="]"/>
+              </group>
+            </group>
+            <text macro="full-date"/>
+          </group>
+        </else-if>
+
+        <!-- ====== STANDARD [S] ====== -->
+        <!-- Format: ReleaseUnit. StandardTitle: StandardNumber[S]. Place: Publisher, Year: Pages. -->
+        <else-if type="legislation">
+          <group delimiter=". ">
+            <text macro="author"/>
+            <group delimiter=": ">
+              <text variable="title"/>
+              <group>
+                <text variable="number"/>
+                <text value="S" prefix="[" suffix="]"/>
+              </group>
+            </group>
+            <group>
+              <text macro="publisher" suffix=", "/>
+              <text macro="year-issued"/>
+              <text macro="page" prefix=": "/>
+            </group>
+          </group>
+        </else-if>
+
+        <!-- ====== WEBPAGE / ELECTRONIC [OL] ====== -->
+        <!-- Format: Author. Title[OL]. AccessedDate, URL -->
+        <else-if type="webpage post-weblog" match="any">
+          <group delimiter=". ">
+            <text macro="author"/>
+            <group>
+              <!-- <text variable="title" suffix="[OL]"/> -->
+              <text value="OL" prefix="[" suffix="]"/>
+            </group>
+            <group delimiter=", ">
+              <date variable="accessed">
+                <date-part name="year" suffix="-"/>
+                <date-part name="month" form="numeric-leading-zeros" suffix="-"/>
+                <date-part name="day" form="numeric-leading-zeros"/>
+              </date>
+              <text variable="URL"/>
+            </group>
+          </group>
+        </else-if>
+
+        <!-- ====== BOOK [M] ====== -->
+        <!-- Format: Author. Title[M]. Translator. Edition. Place: Publisher, Year: Pages. -->
+        <else-if type="book">
+          <group delimiter=". ">
+            <text macro="author"/>
+            <group>
+              <text variable="title"/>
+              <text value="M" prefix="[" suffix="]"/>
+            </group>
+            <!-- Translator (only if present) -->
+            <names variable="translator">
+              <name
+                name-as-sort-order="all"
+                sort-separator=" "
+                initialize-with=""
+                delimiter=", "
+                et-al-min="4"
+                et-al-use-first="3"
+                delimiter-precedes-last="always"
+                delimiter-precedes-et-al="always"/>
+              <et-al term="et-al" font-style="normal"/>
+              <label form="short" prefix="译"/>
+            </names>
+            <!-- Edition (suppress if 1st) -->
+            <choose>
+              <if is-numeric="edition">
+                <group>
+                  <number variable="edition" form="ordinal"/>
+                  <text term="edition" form="short" prefix=" "/>
+                </group>
+              </if>
+              <else-if variable="edition">
+                <text variable="edition"/>
+              </else-if>
+            </choose>
+            <!-- Place: Publisher, Year: Pages -->
+            <group>
+              <text macro="publisher" suffix=", "/>
+              <text macro="year-issued"/>
+              <text macro="page" prefix=": "/>
+            </group>
+          </group>
+        </else-if>
+
+        <!-- ====== FALLBACK [M] for other book-like types ====== -->
+        <else-if type="chapter graphic motion_picture song" match="any">
+          <group delimiter=". ">
+            <text macro="author"/>
+            <group>
+              <text variable="title"/>
+              <text value="M" prefix="[" suffix="]"/>
+            </group>
+            <group delimiter=", ">
+              <text macro="publisher"/>
+              <text macro="year-issued"/>
+              <text macro="page" prefix=": "/>
+            </group>
+          </group>
+        </else-if>
+
+        <!-- ====== GENERIC FALLBACK ====== -->
+        <else>
+          <group delimiter=". ">
+            <text macro="author"/>
+            <group>
+              <text variable="title"/>
+              <text value="X" prefix="[" suffix="]"/>
+            </group>
+            <group delimiter=", ">
+              <text variable="container-title"/>
+              <text macro="year-issued"/>
+              <text macro="page" prefix=": "/>
+            </group>
+          </group>
+        </else>
+
+      </choose>
+    </layout>
+  </bibliography>
+</style>
