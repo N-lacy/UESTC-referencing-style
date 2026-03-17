@@ -291,7 +291,7 @@
             <text macro="author"/>
             <group>
               <!-- <text variable="title" suffix="[OL]"/> -->
-              <!-- <text value="OL" prefix="[" suffix="]"/> -->
+              <text value="OL" prefix="[" suffix="]"/>
             </group>
             <group delimiter=", ">
               <date variable="accessed">
