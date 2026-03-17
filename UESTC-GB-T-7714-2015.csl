@@ -62,7 +62,7 @@
 
   <!-- Authors: Surname + space + initials without dots. Max 3, then et al -->
   <macro name="author">
-    <names variable="author" et-al-min="4" et-al-use-first="3">
+    <names variable="author">
       <name delimiter=", " and="text" initialize-with="" sort-separator=" "/>
       <substitute>
         <names variable="editor"/>
@@ -73,7 +73,7 @@
 
   <!-- Translator for books -->
   <macro name="translator">
-    <names variable="translator" et-al-min="4" et-al-use-first="3">
+    <names variable="translator">
       <name delimiter=", " and="text" initialize-with="" sort-separator=" "/>
       <label form="verb-short" prefix=", "/>
     </names>
