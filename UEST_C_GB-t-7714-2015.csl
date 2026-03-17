@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
+  <info>
+    <title>UEST_C GB/T 7714-2015</title>
+    <title-short>UESTC_GB7714</title-short>
+    <id>http://www.zotero.org/styles/uestc-gb-t-7714-2015</id>
+    <link href="http://www.zotero.org/styles/uestc-gb-t-7714-2015" rel="self"/>
+    <link href="http://www.zotero.org/styles/gb-t-7714-2015-numeric-bilingual" rel="template"/>
+    <author>
+      <name>Modified for UESTC Thesis</name>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="engineering"/>
+    <updated>2025-03-17T00:00:00+00:00</updated>
+    <summary>GB/T 7714-2015 style modified for UESTC thesis requirements. Features: [1] non-superscript citations, surname-first authors with space-separated initials, sentence case titles, proper type identifiers.</summary>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+
+  <locale xml:lang="en">
+    <terms>
+      <term name="et-al">et al</term>
+      <term name="et-al-min">4</term>
+      <term name="et-al-use-first">3</term>
+      <term name="edition" form="short">ed</term>
+      <term name="accessed">accessed</term>
+      <term name="in">in</term>
+      <term name="presented at">presented at</term>
+      <term name="translator" form="verb-short">trans</term>
+    </terms>
+  </locale>
+
+  <locale xml:lang="zh">
+    <terms>
+      <term name="et-al">等</term>
+      <term name="et-al-min">4</term>
+      <term name="et-al-use-first">3</term>
+    </terms>
+  </locale>
+
+  <!-- Authors: Surname + space + initials without dots. Max 3, then et al -->
+  <macro name="author">
+    <names variable="author">
+      <name delimiter=", " and="text" et-al-min="4" et-al-use-first="3" initialize-with="" sort-separator=" "/>
+      <substitute>
+        <names variable="editor"/>
+        <names variable="translator"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <!-- Translator for books -->
+  <macro name="translator">
+    <names variable="translator">
+      <name delimiter=", " and="text" et-al-min="4" et-al-use-first="3" initialize-with="" sort-separator=" "/>
+      <label form="verb-short" prefix=", "/>
+    </names>
+  </macro>
+
+  <!-- Title: Sentence case -->
+  <macro name="title">
+    <text variable="title" text-case="sentence"/>
+  </macro>
+
+  <!-- Type identifier [J], [C], [M], [D], [N], [R], [P], [S], [EB/OL], [M/OL] -->
+  <macro name="type-id">
+    <choose>
+      <if type="article-journal">
+        <text value="[J]"/>
+      </if>
+      <else-if type="paper-conference speech" match="any">
+        <text value="[C]"/>
+      </else-if>
+      <else-if type="book">
+        <choose>
+          <if variable="URL DOI" match="any">
+            <text value="[M/OL]"/>
+          </if>
+          <else>
+            <text value="[M]"/>
+          </else>
+        </choose>
+      </else-if>
+      <else-if type="thesis">
+        <text value="[D]"/>
+      </else-if>
+      <else-if type="article-newspaper">
+        <text value="[N]"/>
+      </else-if>
+      <else-if type="report">
+        <text value="[R]"/>
+      </else-if>
+      <else-if type="patent">
+        <text value="[P]"/>
+      </else-if>
+      <else-if type="legislation legal_case bill treaty standard" match="any">
+        <text value="[S]"/>
+      </else-if>
+      <else-if type="webpage post-weblog" match="any">
+        <text value="[EB/OL]"/>
+      </else-if>
+      <else-if type="chapter">
+        <text value="[G]"/>
+      </else-if>
+      <else-if type="dataset">
+        <text value="[DB]"/>
+      </else-if>
+      <else>
+        <text value="[Z]"/>
+      </else>
+    </choose>
+  </macro>
+
+  <!-- Edition: 2nd ed, 3rd ed, etc. No edition for 1st -->
+  <macro name="edition">
+    <choose>
+      <if type="book chapter" match="any">
+        <choose>
+          <if is-numeric="edition">
+            <choose>
+              <if variable="edition" match="none">
+                <!-- No edition shown for first edition -->
+              </if>
+              <else-if variable="edition" equals="1">
+                <!-- No edition shown for first edition -->
+              </else-if>
+              <else>
+                <number variable="edition" form="ordinal"/>
+                <text term="edition" form="short" prefix=" "/>
+              </else>
+            </choose>
+          </if>
+          <else>
+            <text variable="edition"/>
+          </else>
+        </choose>
+      </if>
+    </choose>
+  </macro>
+
+  <!-- Date: Year for most, YYYY-MM-DD for patents and electronic -->
+  <macro name="issued-year">
+    <date variable="issued">
+      <date-part name="year" form="long"/>
+    </date>
+  </macro>
+
+  <macro name="issued-full">
+    <date variable="issued">
+      <date-part name="year" form="long"/>
+      <date-part name="month" form="numeric-leading-zeros" prefix="-"/>
+      <date-part name="day" form="numeric-leading-zeros" prefix="-"/>
+    </date>
+  </macro>
+
+  <!-- Accessed date: [YYYY-MM-DD] -->
+  <macro name="accessed">
+    <date variable="accessed">
+      <date-part name="year" form="long"/>
+      <date-part name="month" form="numeric-leading-zeros" prefix="-"/>
+      <date-part name="day" form="numeric-leading-zeros" prefix="-"/>
+    </date>
+  </macro>
+
+  <!-- Publisher: Place: Publisher -->
+  <macro name="publisher">
+    <group delimiter=": ">
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+    </group>
+  </macro>
+
+  <!-- Pages: just numbers with colon prefix -->
+  <macro name="page">
+    <text variable="page"/>
+  </macro>
+
+  <!-- Citation: [1], [2,3], [1-3] in normal text (NOT superscript) -->
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout delimiter=", " prefix="[" suffix="]">
+      <group delimiter="-">
+        <text variable="citation-number"/>
+        <text variable="citation-number" form="last"/>
+      </group>
+    </layout>
+  </citation>
+
+  <!-- Bibliography -->
+  <bibliography entry-spacing="0" second-field-align="flush">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout suffix=".">
+      <!-- [1] -->
+      <text variable="citation-number" prefix="[" suffix="]"/>
+
+      <group delimiter=". ">
+        <!-- Author. -->
+        <text macro="author"/>
+
+        <!-- Title[Type]. -->
+        <group delimiter="">
+          <text macro="title"/>
+          <text macro="type-id"/>
+        </group>
+
+        <!-- Type-specific formatting -->
+        <choose>
+          <!-- Journal Article [J]: Journal, Year, Vol(Issue): Pages. -->
+          <if type="article-journal">
+            <group delimiter=", ">
+              <text variable="container-title" font-style="italic"/>
+              <text macro="issued-year"/>
+              <group delimiter="">
+                <text variable="volume"/>
+                <text variable="issue" prefix="(" suffix=")"/>
+              </group>
+              <text macro="page" prefix=": "/>
+            </group>
+          </if>
+
+          <!-- Conference [C]: Conference Name, Place, Year: Pages. -->
+          <else-if type="paper-conference speech" match="any">
+            <group delimiter=", ">
+              <text variable="container-title" font-style="italic"/>
+              <text variable="event-place"/>
+              <text macro="issued-year"/>
+              <text macro="page" prefix=": "/>
+            </group>
+          </else-if>
+
+          <!-- Book [M] or [M/OL]: Translator. Edition. Place: Publisher, Year: Pages. (Date) [Accessed]. URL. -->
+          <else-if type="book">
+            <group delimiter=". ">
+              <!-- Translator if exists -->
+              <choose>
+                <if variable="translator">
+                  <text macro="translator"/>
+                </if>
+              </choose>
+              <!-- Edition if not 1st -->
+              <text macro="edition"/>
+              <!-- Publisher info -->
+              <group delimiter=", ">
+                <text macro="publisher"/>
+                <text macro="issued-year"/>
+                <text macro="page" prefix=": "/>
+              </group>
+              <!-- Electronic info if exists -->
+              <choose>
+                <if variable="URL DOI" match="any">
+                  <group delimiter=" ">
+                    <group prefix="(" suffix=")">
+                      <text macro="issued-full"/>
+                    </group>
+                    <group prefix="[" suffix="]">
+                      <text macro="accessed"/>
+                    </group>
+                    <text variable="URL"/>
+                  </group>
+                </if>
+              </choose>
+            </group>
+          </else-if>
+
+          <!-- Thesis [D]: Place: University, Year: Pages. -->
+          <else-if type="thesis">
+            <group delimiter=", ">
+              <text macro="publisher"/>
+              <text macro="issued-year"/>
+              <text macro="page" prefix=": "/>
+            </group>
+          </else-if>
+
+          <!-- Newspaper [N]: Newspaper, YYYY-MM-DD (Edition). -->
+          <else-if type="article-newspaper">
+            <group delimiter=", ">
+              <text variable="container-title"/>
+              <text macro="issued-full"/>
+              <text variable="page" prefix="(" suffix=")"/>
+            </group>
+          </else-if>
+
+          <!-- Report [R]: Place: Publisher, Year. -->
+          <else-if type="report">
+            <group delimiter=", ">
+              <text macro="publisher"/>
+              <text macro="issued-year"/>
+            </group>
+          </else-if>
+
+          <!-- Patent [P]: Patent Number, YYYY-MM-DD. -->
+          <else-if type="patent">
+            <group delimiter=", ">
+              <text variable="number"/>
+              <text macro="issued-full"/>
+            </group>
+          </else-if>
+
+          <!-- Standard [S]: Standard Number[S]. Place: Publisher, Year: Pages. -->
+          <else-if type="legislation legal_case bill treaty standard" match="any">
+            <group delimiter=". ">
+              <text variable="number"/>
+              <group delimiter=", ">
+                <text macro="publisher"/>
+                <text macro="issued-year"/>
+                <text macro="page" prefix=": "/>
+              </group>
+            </group>
+          </else-if>
+
+          <!-- Electronic [EB/OL]: [EB/OL]. Place: Publisher, Year: Pages (Date) [Accessed]. URL. -->
+          <else-if type="webpage post-weblog" match="any">
+            <group delimiter=". ">
+              <group delimiter=", ">
+                <text macro="publisher"/>
+                <text macro="issued-year"/>
+                <text macro="page" prefix=": "/>
+              </group>
+              <group delimiter=" " prefix="(" suffix=")">
+                <text macro="issued-full"/>
+              </group>
+              <group delimiter=" " prefix="[" suffix="]">
+                <text macro="accessed"/>
+              </group>
+              <text variable="URL"/>
+            </group>
+          </else-if>
+
+          <!-- Chapter [G]: in Book Title. Edition. Place: Publisher, Year: Pages. -->
+          <else-if type="chapter">
+            <group delimiter=". ">
+              <group delimiter=": ">
+                <text term="in" text-case="capitalize-first"/>
+                <text variable="container-title"/>
+              </group>
+              <text macro="edition"/>
+              <group delimiter=", ">
+                <text macro="publisher"/>
+                <text macro="issued-year"/>
+                <text macro="page" prefix=": "/>
+              </group>
+            </group>
+          </else-if>
+
+          <!-- Default -->
+          <else>
+            <group delimiter=", ">
+              <text macro="publisher"/>
+              <text macro="issued-year"/>
+              <text macro="page" prefix=": "/>
+            </group>
+          </else>
+        </choose>
+      </group>
+    </layout>
+  </bibliography>
+</style>
