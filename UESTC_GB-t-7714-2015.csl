@@ -149,6 +149,7 @@
           <else>
             <text variable="edition"/>
           </else>
+        </choose>
       </if>
     </choose>
   </macro>
