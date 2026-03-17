@@ -48,7 +48,7 @@ The included word document shows the results of using **IEEE_UESTC_mod.csl**.
 
 ![image](https://github.com/user-attachments/assets/42a4d6fc-72af-461d-b433-de95ec55a4b3)
 
-You should see **IEEE_uestc** or **IEEE_UESTC** appear on your style list
+You should see **IEEE_uestc**, **IEEE_UESTC** or **UESTC_GBT7714** appear on your style list depending on which link you chose
 If it is not automatically sellected, select it and your're good to go. (see image below)
 
 ![image](https://github.com/user-attachments/assets/d4f580b2-10a4-4a53-a975-5d0836ac88a7)
