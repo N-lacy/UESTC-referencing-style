@@ -284,17 +284,21 @@
           </group>
         </else-if>
 
-        <!-- ====== WEBPAGE / ELECTRONIC [EB/OL] ====== -->
-        <!-- Format: Author. Title[EB/OL]. PublishDate, URL -->
+        <!-- ====== WEBPAGE / ELECTRONIC [OL] ====== -->
+        <!-- Format: Author. Title[OL]. AccessedDate, URL -->
         <else-if type="webpage post-weblog" match="any">
           <group delimiter=". ">
             <text macro="author"/>
             <group>
               <text variable="title"/>
-              <text value="EB/OL" prefix="[" suffix="]"/>
+              <text value="OL" prefix="[" suffix="]"/>
             </group>
             <group delimiter=", ">
-              <text macro="full-date"/>
+              <date variable="accessed">
+                <date-part name="year" suffix="-"/>
+                <date-part name="month" form="numeric-leading-zeros" suffix="-"/>
+                <date-part name="day" form="numeric-leading-zeros"/>
+              </date>
               <text variable="URL"/>
             </group>
           </group>
