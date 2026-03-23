@@ -21,8 +21,8 @@ The most recent update, **UESTC_GBT7714-.csl** is updated with more rules and ed
 
 Both links are available below. Copy the link of whichever you choose. 
 
-**UESTC_GBT7714-.csl** (Recommended):
-https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/UESTC_GBT7714-.csl
+**UESTC_GBT7714-2.csl** (Recommended):
+https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/UESTC_GBT7714-2.csl
 
 **IEEE_UESTC_mod.csl**:
 https://raw.githubusercontent.com/N-lacy/UESTC-referencing-style/refs/heads/master/IEEE_UESTC_mod.csl
